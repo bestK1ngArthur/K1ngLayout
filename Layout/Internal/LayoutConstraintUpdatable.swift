@@ -26,7 +26,7 @@ extension UIView: LayoutConstraintUpdatable {
                     return current.firstAnchor == fromAnchor
                         && current.secondAnchor == toAnchor
                 } else {
-                    return false
+                    fatalError("Can't update constraint")
                 }
               }) else {
             return
