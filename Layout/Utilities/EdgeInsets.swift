@@ -29,8 +29,8 @@ public struct EdgeInsets {
                 vertical: CGFloat) {
         self.top = vertical
         self.left = horizontal
-        self.bottom = -vertical
-        self.right = -horizontal
+        self.bottom = vertical
+        self.right = horizontal
     }
 
     public static func all(_ value: CGFloat) -> Self {
