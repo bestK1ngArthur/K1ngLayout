@@ -40,6 +40,19 @@ extension UILayoutPriority {
 extension UIView {
     
     public func activate(_ constraints: [LayoutConstraint], priority: UILayoutPriority = .standart) {
+        
+        let layoutConstraints = nsConstraints(from: constraints, with: priority)
+        NSLayoutConstraint.activate(layoutConstraints)
+    }
+}
+
+extension UIView {
+    
+    func nsConstraints(
+        from constraints: [LayoutConstraint],
+        with priority: UILayoutPriority = .required
+    ) -> [NSLayoutConstraint] {
+        
         let layoutConstraints: [NSLayoutConstraint] = constraints.compactMap { constraint in
             let layoutConstraint: NSLayoutConstraint
             
@@ -77,11 +90,8 @@ extension UIView {
             return layoutConstraint
         }
         
-        NSLayoutConstraint.activate(layoutConstraints)
+        return layoutConstraints
     }
-}
-
-extension UIView {
     
     func nsAnchorConstraint(
         from: NSLayoutAnchor<AnyObject>,
