@@ -125,6 +125,23 @@ extension UIView {
         multiplifier: CGFloat,
         constant: CGFloat
     ) -> NSLayoutConstraint {
+        if from == to, multiplifier == 1 {
+            switch type {
+            case .equal:
+                return from.constraint(
+                    equalToConstant: constant
+                )
+            case .lessOrEqual:
+                return from.constraint(
+                    lessThanOrEqualToConstant: constant
+                )
+            case .greaterOrEqual:
+                return from.constraint(
+                    greaterThanOrEqualToConstant: constant
+                )
+            }
+        }
+        
         switch type {
         case .equal:
             return from.constraint(

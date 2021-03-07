@@ -19,12 +19,28 @@ extension UILayoutGuide: LayoutConstraintUpdatable {
 
 extension UIView: LayoutConstraintUpdatable {
     func update(constraint: LayoutConstraint) {
-        guard let fromAnchor = nsAnchor(from: constraint.from),
-              let toAnchor = nsAnchor(from: constraint.to),
+        if let fromDimension = constraint.from as? LayoutDimension,
+           let toDimension = constraint.to as? LayoutDimension,
+           let nsFromDimension = nsDimension(from: fromDimension),
+           let nsToDimension = nsDimension(from: toDimension),
+           let nsConstraint = constraints.first(where: { current in
+            if #available(iOS 10.0, *) {
+                return current.firstAnchor == nsFromDimension
+                    && current.secondAnchor == ((nsFromDimension == nsToDimension) ? nil : nsToDimension)
+            } else {
+                fatalError("Can't update constraint")
+            }
+          }) {
+            nsConstraint.constant = constraint.constant
+            return
+        }
+        
+        guard let nsFromAnchor = nsAnchor(from: constraint.from),
+              let nsToAnchor = nsAnchor(from: constraint.to),
               let nsConstraint = constraints.first(where: { current in
                 if #available(iOS 10.0, *) {
-                    return current.firstAnchor == fromAnchor
-                        && current.secondAnchor == toAnchor
+                    return current.firstAnchor == nsFromAnchor
+                        && current.secondAnchor == nsToAnchor
                 } else {
                     fatalError("Can't update constraint")
                 }
