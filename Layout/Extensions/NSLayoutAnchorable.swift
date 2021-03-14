@@ -13,7 +13,9 @@ public protocol NSLayoutAnchorable: AnyObject {
     var bottomAnchor: NSLayoutYAxisAnchor { get }
     var leftAnchor: NSLayoutXAxisAnchor { get }
     var rightAnchor: NSLayoutXAxisAnchor { get }
-    
+    var leadingAnchor: NSLayoutXAxisAnchor { get }
+    var trailingAnchor: NSLayoutXAxisAnchor { get }
+
     var centerYAnchor: NSLayoutYAxisAnchor { get }
     var centerXAnchor: NSLayoutXAxisAnchor { get }
     

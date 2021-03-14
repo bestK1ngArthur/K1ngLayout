@@ -78,6 +78,8 @@ extension LayoutAnchor {
         case bottom
         case left
         case right
+        case leading
+        case trailing
         case vCenter
         case hCenter
         case height

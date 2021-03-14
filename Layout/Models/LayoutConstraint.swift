@@ -42,6 +42,14 @@ public struct LayoutConstraint {
         generateNSConstraint()
     }
     
+    public static func activate(_ constraints: [LayoutConstraint]) {
+        NSLayoutConstraint.activate(nsConstraints(from: constraints))
+    }
+    
+    internal static func nsConstraints(from constraints: [Self]) -> [NSLayoutConstraint] {
+        return constraints.compactMap(\.nsConstraint)
+    }
+    
     private mutating func generateNSConstraint() {
         if let fromDimension = from as? LayoutDimension,
            let toDimension = to as? LayoutDimension {
@@ -158,6 +166,8 @@ public struct LayoutConstraint {
             case .bottom: return anchors.bottomAnchor
             case .left: return anchors.leftAnchor
             case .right: return anchors.rightAnchor
+            case .leading: return anchors.leadingAnchor
+            case .trailing: return anchors.trailingAnchor
             case .vCenter: return anchors.centerYAnchor
             case .hCenter: return anchors.centerXAnchor
             default: return nil
@@ -200,10 +210,13 @@ extension UILayoutPriority {
 extension UIView {
     
     public func activate(_ constraints: [LayoutConstraint]) {
-        NSLayoutConstraint.activate(nsConstraints(from: constraints))
+        LayoutConstraint.activate(constraints)
     }
+}
+
+extension UILayoutGuide {
     
-    internal func nsConstraints(from constraints: [LayoutConstraint]) -> [NSLayoutConstraint] {
-        return constraints.compactMap(\.nsConstraint)
+    public func activate(_ constraints: [LayoutConstraint]) {
+        LayoutConstraint.activate(constraints)
     }
 }

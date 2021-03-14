@@ -10,8 +10,12 @@ import UIKit
 public protocol LayoutAnchorable: AnyObject {
     var top: LayoutAnchor { get }
     var bottom: LayoutAnchor { get }
+    
     var left: LayoutAnchor { get }
     var right: LayoutAnchor { get }
+    
+    var leading: LayoutAnchor { get }
+    var trailing: LayoutAnchor { get }
     
     var vCenter: LayoutAnchor { get }
     var hCenter: LayoutAnchor { get }
@@ -20,9 +24,13 @@ public protocol LayoutAnchorable: AnyObject {
 extension UIView: LayoutAnchorable {
     public var top: LayoutAnchor { .init(view: self, type: .top) }
     public var bottom: LayoutAnchor { .init(view: self, type: .bottom) }
+    
     public var left: LayoutAnchor { .init(view: self, type: .left) }
     public var right: LayoutAnchor { .init(view: self, type: .right) }
     
+    public var leading: LayoutAnchor { .init(view: self, type: .leading) }
+    public var trailing: LayoutAnchor { .init(view: self, type: .trailing) }
+
     public var vCenter: LayoutAnchor { .init(view: self, type: .vCenter) }
     public var hCenter: LayoutAnchor { .init(view: self, type: .hCenter) }
 }
@@ -30,9 +38,13 @@ extension UIView: LayoutAnchorable {
 extension UILayoutGuide: LayoutAnchorable {
     public var top: LayoutAnchor { .init(view: self, type: .top) }
     public var bottom: LayoutAnchor { .init(view: self, type: .bottom) }
+    
     public var left: LayoutAnchor { .init(view: self, type: .left) }
     public var right: LayoutAnchor { .init(view: self, type: .right) }
     
+    public var leading: LayoutAnchor { .init(view: self, type: .leading) }
+    public var trailing: LayoutAnchor { .init(view: self, type: .trailing) }
+
     public var vCenter: LayoutAnchor { .init(view: self, type: .vCenter) }
     public var hCenter: LayoutAnchor { .init(view: self, type: .hCenter) }
 }

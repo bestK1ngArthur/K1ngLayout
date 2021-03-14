@@ -24,19 +24,23 @@ class LayoutConstraintTests: XCTestCase {
             view.top.equal(to: superview.top),
             view.bottom.equal(to: superview.bottom),
             view.left.equal(to: superview.left),
-            view.right.equal(to: superview.right)
+            view.right.equal(to: superview.right),
+            view.leading.equal(to: superview.leading),
+            view.trailing.equal(to: superview.trailing)
         ]
         
         var nsConstraints = [
             view.topAnchor.constraint(equalTo: superview.topAnchor),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
             view.leftAnchor.constraint(equalTo: superview.leftAnchor),
-            view.rightAnchor.constraint(equalTo: superview.rightAnchor)
+            view.rightAnchor.constraint(equalTo: superview.rightAnchor),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
         ]
         
         nsConstraints.setPriority(.standart)
         
-        XCTAssert(compare(lhs: view.nsConstraints(from: constraints),
+        XCTAssert(compare(lhs: LayoutConstraint.nsConstraints(from: constraints),
                           rhs: nsConstraints))
 
         // Test edges constraints with constant
@@ -45,19 +49,23 @@ class LayoutConstraintTests: XCTestCase {
             view.top.equal(to: superview.top, constant: 1),
             view.bottom.equal(to: superview.bottom, constant: 2),
             view.left.equal(to: superview.left, constant: 3),
-            view.right.equal(to: superview.right, constant: 4)
+            view.right.equal(to: superview.right, constant: 4),
+            view.leading.equal(to: superview.leading, constant: 5),
+            view.trailing.equal(to: superview.trailing, constant: 6)
         ]
         
         var nsConstraintsWithConstant = [
             view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 1),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 2),
             view.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: 3),
-            view.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: 4)
+            view.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: 4),
+            view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 5),
+            view.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 6)
         ]
         
         nsConstraintsWithConstant.setPriority(.standart)
         
-        XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithConstant),
+        XCTAssert(compare(lhs: LayoutConstraint.nsConstraints(from: constraintsWithConstant),
                           rhs: nsConstraintsWithConstant))
     }
     
@@ -77,7 +85,7 @@ class LayoutConstraintTests: XCTestCase {
         
         nsConstraints.setPriority(.standart)
         
-        XCTAssert(compare(lhs: view.nsConstraints(from: constraints),
+        XCTAssert(compare(lhs: LayoutConstraint.nsConstraints(from: constraints),
                           rhs: nsConstraints))
         
         // Test dimensions constraints with multiplifier
@@ -94,7 +102,7 @@ class LayoutConstraintTests: XCTestCase {
         
         nsConstraintsWithMultiplifier.setPriority(.standart)
         
-        XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithMultiplifier),
+        XCTAssert(compare(lhs: LayoutConstraint.nsConstraints(from: constraintsWithMultiplifier),
                           rhs: nsConstraintsWithMultiplifier))
         
         // Test dimensions constraints with constant
@@ -111,7 +119,7 @@ class LayoutConstraintTests: XCTestCase {
         
         nsConstraintsWithConstant.setPriority(.standart)
         
-        XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithConstant),
+        XCTAssert(compare(lhs: LayoutConstraint.nsConstraints(from: constraintsWithConstant),
                           rhs: nsConstraintsWithConstant))
     }
     
