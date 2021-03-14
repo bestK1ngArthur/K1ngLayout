@@ -18,31 +18,57 @@ public class LayoutAnchor {
     
     public func equal(
         to anchor: LayoutAnchor,
-        constant: CGFloat = 0
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> LayoutConstraint {
-        return constraint(to: anchor, type: .equal, constant: constant)
+        return constraint(
+            to: anchor,
+            type: .equal,
+            constant: constant,
+            priority: priority
+        )
     }
     
     public func lessOrEqual(
         to anchor: LayoutAnchor,
-        constant: CGFloat = 0
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> LayoutConstraint {
-        return constraint(to: anchor, type: .lessOrEqual, constant: constant)
+        return constraint(
+            to: anchor,
+            type: .lessOrEqual,
+            constant: constant,
+            priority: priority
+        )
     }
     
     public func greaterOrEqual(
         to anchor: LayoutAnchor,
-        constant: CGFloat = 0
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> LayoutConstraint {
-        return constraint(to: anchor, type: .greaterOrEqual, constant: constant)
+        return constraint(
+            to: anchor,
+            type: .greaterOrEqual,
+            constant: constant,
+            priority: priority
+        )
     }
     
     private func constraint(
         to anchor: LayoutAnchor,
         type: LayoutConstraint.`Type`,
-        constant: CGFloat
+        constant: CGFloat,
+        priority: UILayoutPriority
     ) -> LayoutConstraint {
-        return .init(from: self, to: anchor, type: type, multiplifier: 1, constant: constant)
+        return .init(
+            from: self,
+            to: anchor,
+            type: type,
+            multiplifier: 1,
+            constant: constant,
+            priority: priority
+        )
     }
 }
 

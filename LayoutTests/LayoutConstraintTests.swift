@@ -27,12 +27,14 @@ class LayoutConstraintTests: XCTestCase {
             view.right.equal(to: superview.right)
         ]
         
-        let nsConstraints = [
+        var nsConstraints = [
             view.topAnchor.constraint(equalTo: superview.topAnchor),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
             view.leftAnchor.constraint(equalTo: superview.leftAnchor),
             view.rightAnchor.constraint(equalTo: superview.rightAnchor)
         ]
+        
+        nsConstraints.setPriority(.standart)
         
         XCTAssert(compare(lhs: view.nsConstraints(from: constraints),
                           rhs: nsConstraints))
@@ -46,12 +48,14 @@ class LayoutConstraintTests: XCTestCase {
             view.right.equal(to: superview.right, constant: 4)
         ]
         
-        let nsConstraintsWithConstant = [
+        var nsConstraintsWithConstant = [
             view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 1),
             view.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 2),
             view.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: 3),
             view.rightAnchor.constraint(equalTo: superview.rightAnchor, constant: 4)
         ]
+        
+        nsConstraintsWithConstant.setPriority(.standart)
         
         XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithConstant),
                           rhs: nsConstraintsWithConstant))
@@ -66,10 +70,12 @@ class LayoutConstraintTests: XCTestCase {
             view.width.equal(to: superview.width)
         ]
         
-        let nsConstraints = [
+        var nsConstraints = [
             view.heightAnchor.constraint(equalTo: superview.heightAnchor),
             view.widthAnchor.constraint(equalTo: superview.widthAnchor)
         ]
+        
+        nsConstraints.setPriority(.standart)
         
         XCTAssert(compare(lhs: view.nsConstraints(from: constraints),
                           rhs: nsConstraints))
@@ -81,10 +87,12 @@ class LayoutConstraintTests: XCTestCase {
             view.width.equal(to: superview.width, multiplifier: 2)
         ]
         
-        let nsConstraintsWithMultiplifier = [
+        var nsConstraintsWithMultiplifier = [
             view.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1),
             view.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 2)
         ]
+        
+        nsConstraintsWithMultiplifier.setPriority(.standart)
         
         XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithMultiplifier),
                           rhs: nsConstraintsWithMultiplifier))
@@ -96,10 +104,12 @@ class LayoutConstraintTests: XCTestCase {
             view.width.equal(constant: 2)
         ]
         
-        let nsConstraintsWithConstant = [
+        var nsConstraintsWithConstant = [
             view.heightAnchor.constraint(equalToConstant: 1),
             view.widthAnchor.constraint(equalToConstant: 2)
         ]
+        
+        nsConstraintsWithConstant.setPriority(.standart)
         
         XCTAssert(compare(lhs: view.nsConstraints(from: constraintsWithConstant),
                           rhs: nsConstraintsWithConstant))
@@ -123,5 +133,13 @@ fileprivate func compare(lhs: [NSLayoutConstraint], rhs: [NSLayoutConstraint]) -
     
     return zip(lhs, rhs).reduce(true) { result, constraints in
         return result && compare(lhs: constraints.0, rhs: constraints.1)
+    }
+}
+
+fileprivate extension Array where Element == NSLayoutConstraint {
+    mutating func setPriority(_ priority: UILayoutPriority) {
+        forEach { element in
+            element.priority = priority
+        }
     }
 }

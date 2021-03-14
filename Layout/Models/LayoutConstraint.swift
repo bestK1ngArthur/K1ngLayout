@@ -11,89 +11,71 @@ public struct LayoutConstraint {
     public let from: LayoutAnchor
     public let to: LayoutAnchor
     public let type: Type
+    
     public let multiplifier: CGFloat
-
     public var constant: CGFloat {
         didSet {
-            guard constant != oldValue,
-                  let view = from.view as? LayoutConstraintUpdatable else {
-                return
-            }
-            
-            view.update(constraint: self)
+            guard constant != oldValue else { return }
+            nsConstraint?.constant = constant
         }
     }
-}
-
-extension LayoutConstraint {
-    public enum `Type` {
-        case equal
-        case lessOrEqual
-        case greaterOrEqual
-    }
-}
-
-extension UILayoutPriority {
-    public static var standart: UILayoutPriority { .required - 1 }
-}
-
-extension UIView {
     
-    public func activate(_ constraints: [LayoutConstraint], priority: UILayoutPriority = .standart) {
-        
-        let layoutConstraints = nsConstraints(from: constraints, with: priority)
-        NSLayoutConstraint.activate(layoutConstraints)
-    }
-}
-
-extension UIView {
+    public let priority: UILayoutPriority
     
-    func nsConstraints(
-        from constraints: [LayoutConstraint],
-        with priority: UILayoutPriority = .required
-    ) -> [NSLayoutConstraint] {
+    internal var nsConstraint: NSLayoutConstraint?
+    
+    init(
+        from: LayoutAnchor,
+        to: LayoutAnchor,
+        type: Type,
+        multiplifier: CGFloat,
+        constant: CGFloat,
+        priority: UILayoutPriority
+    ) {
+        self.from = from
+        self.to = to
+        self.type = type
+        self.multiplifier = multiplifier
+        self.constant = constant
+        self.priority = priority
         
-        let layoutConstraints: [NSLayoutConstraint] = constraints.compactMap { constraint in
-            let layoutConstraint: NSLayoutConstraint
-            
-            if let fromDimension = constraint.from as? LayoutDimension,
-               let toDimension = constraint.to as? LayoutDimension {
-                guard let fromDimensionAnchor = nsDimension(from: fromDimension),
-                      let toDimensionAnchor = nsDimension(from: toDimension) else {
-                    return nil
-                }
-                
-                layoutConstraint = nsDimensionConstraint(
-                    from: fromDimensionAnchor,
-                    to: toDimensionAnchor,
-                    type: constraint.type,
-                    multiplifier: constraint.multiplifier,
-                    constant: constraint.constant
-                )
-                
-            } else {
-                guard let fromAnchor = nsAnchor(from: constraint.from),
-                      let toAnchor = nsAnchor(from: constraint.to) else {
-                    return nil
-                }
-                
-                layoutConstraint = nsAnchorConstraint(
-                    from: fromAnchor,
-                    to: toAnchor,
-                    type: constraint.type,
-                    constant: constraint.constant
-                )
+        generateNSConstraint()
+    }
+    
+    private mutating func generateNSConstraint() {
+        if let fromDimension = from as? LayoutDimension,
+           let toDimension = to as? LayoutDimension {
+            guard let fromDimensionAnchor = nsDimension(from: fromDimension),
+                  let toDimensionAnchor = nsDimension(from: toDimension) else {
+                fatalError("Can't find dimension anchor")
             }
             
-            layoutConstraint.priority = priority
+            nsConstraint = nsDimensionConstraint(
+                from: fromDimensionAnchor,
+                to: toDimensionAnchor,
+                type: type,
+                multiplifier: multiplifier,
+                constant: constant
+            )
             
-            return layoutConstraint
+        } else {
+            guard let fromAnchor = nsAnchor(from: from),
+                  let toAnchor = nsAnchor(from: to) else {
+                fatalError("Can't find anchor")
+            }
+            
+            nsConstraint = nsAnchorConstraint(
+                from: fromAnchor,
+                to: toAnchor,
+                type: type,
+                constant: constant
+            )
         }
         
-        return layoutConstraints
+        nsConstraint?.priority = priority
     }
     
-    func nsAnchorConstraint(
+    private func nsAnchorConstraint(
         from: NSLayoutAnchor<AnyObject>,
         to: NSLayoutAnchor<AnyObject>,
         type: LayoutConstraint.`Type`,
@@ -118,7 +100,7 @@ extension UIView {
         }
     }
     
-    func nsDimensionConstraint(
+    private func nsDimensionConstraint(
         from: NSLayoutDimension,
         to: NSLayoutDimension,
         type: LayoutConstraint.`Type`,
@@ -164,7 +146,7 @@ extension UIView {
         }
     }
     
-    func nsAnchor(from anchor: LayoutAnchor) -> NSLayoutAnchor<AnyObject>? {
+    private func nsAnchor(from anchor: LayoutAnchor) -> NSLayoutAnchor<AnyObject>? {
         guard let anchors = anchor.view else {
             assertionFailure("View can't be nil")
             return nil
@@ -185,7 +167,7 @@ extension UIView {
         return layoutAnchor as? NSLayoutAnchor<AnyObject>
     }
     
-    func nsDimension(from dimension: LayoutDimension) -> NSLayoutDimension? {
+    private func nsDimension(from dimension: LayoutDimension) -> NSLayoutDimension? {
         guard let dimensions = dimension.view else {
             assertionFailure("View can't be nil")
             return nil
@@ -200,5 +182,28 @@ extension UIView {
         }()
         
         return dimensionAnchor
+    }
+}
+
+extension LayoutConstraint {
+    public enum `Type` {
+        case equal
+        case lessOrEqual
+        case greaterOrEqual
+    }
+}
+
+extension UILayoutPriority {
+    public static var standart: UILayoutPriority { .required - 1 }
+}
+
+extension UIView {
+    
+    public func activate(_ constraints: [LayoutConstraint]) {
+        NSLayoutConstraint.activate(nsConstraints(from: constraints))
+    }
+    
+    internal func nsConstraints(from constraints: [LayoutConstraint]) -> [NSLayoutConstraint] {
+        return constraints.compactMap(\.nsConstraint)
     }
 }

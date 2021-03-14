@@ -18,7 +18,6 @@
 		A5105DB525F293BF00B582B8 /* NSLayoutAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAD25F293BF00B582B8 /* NSLayoutAnchorable.swift */; };
 		A5105DB625F293BF00B582B8 /* LayoutAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAE25F293BF00B582B8 /* LayoutAnchorable.swift */; };
 		A5105DB725F293BF00B582B8 /* LayoutPinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAF25F293BF00B582B8 /* LayoutPinnable.swift */; };
-		A5105DE825F298C200B582B8 /* LayoutConstraintUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DE725F298C200B582B8 /* LayoutConstraintUpdatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		A5105DAD25F293BF00B582B8 /* NSLayoutAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchorable.swift; sourceTree = "<group>"; };
 		A5105DAE25F293BF00B582B8 /* LayoutAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAnchorable.swift; sourceTree = "<group>"; };
 		A5105DAF25F293BF00B582B8 /* LayoutPinnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPinnable.swift; sourceTree = "<group>"; };
-		A5105DE725F298C200B582B8 /* LayoutConstraintUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintUpdatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 				A5105D8F25F2923A00B582B8 /* Layout.h */,
 				A5105D9025F2923A00B582B8 /* Info.plist */,
 				A5105DF025F29A3B00B582B8 /* Extensions */,
-				A5105DED25F29A0400B582B8 /* Internal */,
 				A5105DF825F29ACD00B582B8 /* Models */,
 				A5105DFB25F29AE300B582B8 /* Utilities */,
 			);
@@ -106,14 +103,6 @@
 				A5105D9C25F2923A00B582B8 /* Info.plist */,
 			);
 			path = LayoutTests;
-			sourceTree = "<group>";
-		};
-		A5105DED25F29A0400B582B8 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				A5105DE725F298C200B582B8 /* LayoutConstraintUpdatable.swift */,
-			);
-			path = Internal;
 			sourceTree = "<group>";
 		};
 		A5105DF025F29A3B00B582B8 /* Extensions */ = {
@@ -257,7 +246,6 @@
 				A5105DB625F293BF00B582B8 /* LayoutAnchorable.swift in Sources */,
 				A5105DB425F293BF00B582B8 /* LayoutDimensionable.swift in Sources */,
 				A5105DB325F293BF00B582B8 /* LayoutDimension.swift in Sources */,
-				A5105DE825F298C200B582B8 /* LayoutConstraintUpdatable.swift in Sources */,
 				A5105DB125F293BF00B582B8 /* LayoutAnchor.swift in Sources */,
 				A5105DB025F293BF00B582B8 /* LayoutConstraint.swift in Sources */,
 				A5105DB225F293BF00B582B8 /* EdgeInsets.swift in Sources */,
