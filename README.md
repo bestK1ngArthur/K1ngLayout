@@ -3,6 +3,15 @@
 
 📐 Simple autolayout wrapper
 
+## Instalation
+
+Add pod to Podfile
+
+```
+pod 'Layout', :git => 'https://github.com/bestK1ngArthur/Layout'
+```
+
+
 ## Examples
 
 ```Swift
