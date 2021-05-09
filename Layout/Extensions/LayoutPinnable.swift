@@ -10,35 +10,195 @@ import UIKit
 public protocol LayoutPinnable {
     // MARK: All edges with equal constant
 
+    /**
+     Pins all edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinEqualEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins all edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinLessOrEqualEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins all edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinGreaterOrEqualEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
 
     // MARK: All edges with insets
 
+    /**
+     Pins all edges of view to other view with **equal** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinEqualEdges(to view: UIView, insets: EdgeInsets, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins all edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinLessOrEqualEdges(to view: UIView, insets: EdgeInsets, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins all edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinGreaterOrEqualEdges(to view: UIView, insets: EdgeInsets, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins all edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinEdges(to view: UIView, type: LayoutConstraint.`Type`, insets: EdgeInsets, priority: UILayoutPriority) -> [LayoutConstraint]
 
     // MARK: Vertical edges with equal constant
 
+    /**
+     Pins vertical edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinEqualVerticalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins vertical edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinLessOrEqualVerticalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins vertical edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinGreaterOrEqualVerticalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins vertical edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinVerticalEdges(to view: UIView, type: LayoutConstraint.`Type`, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
 
     // MARK: Horizontal edges with equal constant
 
+    /**
+     Pins horizontal edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinEqualHorizontalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins horizontal edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinLessOrEqualHorizontalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins horizontal edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinGreaterOrEqualHorizontalEdges(to view: UIView, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
+
+    /**
+     Pins horizontal edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.
+     - Parameter constant: The constant value of pin constraints.
+     - Parameter priority: The priority of pin constraints.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     func pinHorizontalEdges(to view: UIView, type: LayoutConstraint.`Type`, constant: CGFloat, priority: UILayoutPriority) -> [LayoutConstraint]
 }
+
+// MARK: -
 
 extension UIView: LayoutPinnable {
     // MARK: All edges with equal constant
 
+    /**
+     Pins all edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinEqualEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -52,6 +212,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins all edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinLessOrEqualEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -65,6 +234,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins all edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinGreaterOrEqualEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -80,6 +258,15 @@ extension UIView: LayoutPinnable {
 
     // MARK: All edges with insets
 
+    /**
+     Pins all edges of view to other view with **equal** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinEqualEdges(
         to view: UIView,
         insets: EdgeInsets,
@@ -93,6 +280,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins all edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinLessOrEqualEdges(
         to view: UIView,
         insets: EdgeInsets,
@@ -106,6 +302,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins all edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinGreaterOrEqualEdges(
         to view: UIView,
         insets: EdgeInsets,
@@ -119,10 +324,20 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins all edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.  Default is `.equal`.
+     - Parameter insets: The insets from target view edges.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinEdges(
         to view: UIView,
         type: LayoutConstraint.`Type` = .equal,
-        insets: EdgeInsets = .zero,
+        insets: EdgeInsets,
         priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return [
@@ -163,6 +378,15 @@ extension UIView: LayoutPinnable {
 
     // MARK: Vertical edges with equal constant
 
+    /**
+     Pins vertical edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.  Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinEqualVerticalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -176,6 +400,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins vertical edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.  Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinLessOrEqualVerticalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -189,6 +422,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins vertical edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints.  Default is `0`.
+     - Parameter priority: The priority of pin constraints. Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinGreaterOrEqualVerticalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -202,6 +444,16 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins vertical edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.  Default is `.equal`.
+     - Parameter constant: The constant value of pin constraints.  Default is `0`.
+     - Parameter priority: The priority of pin constraints.  Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinVerticalEdges(
         to view: UIView,
         type: LayoutConstraint.`Type` = .equal,
@@ -230,6 +482,15 @@ extension UIView: LayoutPinnable {
 
     // MARK: Horizontal edges with equal constant
 
+    /**
+     Pins horizontal edges of view to other view with **equal** constraints .
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints.  Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinEqualHorizontalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -243,6 +504,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins horizontal edges of view to other view with **lessThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints.  Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinLessOrEqualHorizontalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -256,6 +526,15 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins horizontal edges of view to other view with **greaterThanOrEqual** constraints.
+
+     - Parameter view: The target view to pin.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints.  Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinGreaterOrEqualHorizontalEdges(
         to view: UIView,
         constant: CGFloat = 0,
@@ -269,6 +548,16 @@ extension UIView: LayoutPinnable {
         )
     }
 
+    /**
+     Pins horizontal edges of view to other view.
+
+     - Parameter view: The target view to pin.
+     - Parameter type: The type of constraint.  Default is `.equal`.
+     - Parameter constant: The constant value of pin constraints. Default is `0`.
+     - Parameter priority: The priority of pin constraints.  Default is `.standart`.
+
+     - Returns: An array of layout constraints to `activate()`.
+     */
     public func pinHorizontalEdges(
         to view: UIView,
         type: LayoutConstraint.`Type` = .equal,
