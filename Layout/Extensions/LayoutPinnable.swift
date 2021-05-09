@@ -165,8 +165,8 @@ extension UIView: LayoutPinnable {
 
     public func pinEqualVerticalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinVerticalEdges(
             to: view,
@@ -178,8 +178,8 @@ extension UIView: LayoutPinnable {
 
     public func pinLessOrEqualVerticalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinVerticalEdges(
             to: view,
@@ -191,8 +191,8 @@ extension UIView: LayoutPinnable {
 
     public func pinGreaterOrEqualVerticalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinVerticalEdges(
             to: view,
@@ -232,8 +232,8 @@ extension UIView: LayoutPinnable {
 
     public func pinEqualHorizontalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinHorizontalEdges(
             to: view,
@@ -245,8 +245,8 @@ extension UIView: LayoutPinnable {
 
     public func pinLessOrEqualHorizontalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinHorizontalEdges(
             to: view,
@@ -258,8 +258,8 @@ extension UIView: LayoutPinnable {
 
     public func pinGreaterOrEqualHorizontalEdges(
         to view: UIView,
-        constant: CGFloat,
-        priority: UILayoutPriority
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .standart
     ) -> [LayoutConstraint] {
         return pinHorizontalEdges(
             to: view,
