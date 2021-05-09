@@ -1,2 +1,15 @@
-## User settings
-xcuserdata/
+## macOS
+.DS_Store
+
+## Build generated
+build/
+DerivedData/
+
+## Xcode
+*.xcodeproj/xcuserdata/
+*.xcodeproj/xcshareddata/
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+## Swift Package Manager
+BuildTools/.build
+BuildTools/.swiftpm

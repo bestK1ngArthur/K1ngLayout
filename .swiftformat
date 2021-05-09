@@ -1,0 +1,16 @@
+# Build options
+--swiftversion 5.0
+
+# File options
+--exclude Pods
+
+# Rules
+--disable wrapMultilineStatementBraces
+--disable initCoderUnavailable
+--disable wrapSwitchCases
+--disable unusedArguments
+--wrapconditions after-first
+--funcattributes prev-line
+--guardelse same-line
+--commas inline
+--ranges no-space

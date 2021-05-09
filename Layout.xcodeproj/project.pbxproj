@@ -18,6 +18,8 @@
 		A5105DB525F293BF00B582B8 /* NSLayoutAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAD25F293BF00B582B8 /* NSLayoutAnchorable.swift */; };
 		A5105DB625F293BF00B582B8 /* LayoutAnchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAE25F293BF00B582B8 /* LayoutAnchorable.swift */; };
 		A5105DB725F293BF00B582B8 /* LayoutPinnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAF25F293BF00B582B8 /* LayoutPinnable.swift */; };
+		A567A16226480FD7004F6BBE /* LayoutPinnableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567A16126480FD7004F6BBE /* LayoutPinnableTests.swift */; };
+		A567A16426481047004F6BBE /* NSLayoutConstraint+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A567A16326481047004F6BBE /* NSLayoutConstraint+Comparable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 		A5105DAD25F293BF00B582B8 /* NSLayoutAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutAnchorable.swift; sourceTree = "<group>"; };
 		A5105DAE25F293BF00B582B8 /* LayoutAnchorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutAnchorable.swift; sourceTree = "<group>"; };
 		A5105DAF25F293BF00B582B8 /* LayoutPinnable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutPinnable.swift; sourceTree = "<group>"; };
+		A567A16126480FD7004F6BBE /* LayoutPinnableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPinnableTests.swift; sourceTree = "<group>"; };
+		A567A16326481047004F6BBE /* NSLayoutConstraint+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Comparable.swift"; sourceTree = "<group>"; };
+		A567A16626481204004F6BBE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 		A5105D8225F2923A00B582B8 = {
 			isa = PBXGroup;
 			children = (
+				A567A165264811D6004F6BBE /* BuildTools */,
 				A5105D8E25F2923A00B582B8 /* Layout */,
 				A5105D9925F2923A00B582B8 /* LayoutTests */,
 				A5105D8D25F2923A00B582B8 /* Products */,
@@ -100,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				A5105D9A25F2923A00B582B8 /* LayoutConstraintTests.swift */,
+				A567A16126480FD7004F6BBE /* LayoutPinnableTests.swift */,
+				A567A16326481047004F6BBE /* NSLayoutConstraint+Comparable.swift */,
 				A5105D9C25F2923A00B582B8 /* Info.plist */,
 			);
 			path = LayoutTests;
@@ -134,6 +142,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		A567A165264811D6004F6BBE /* BuildTools */ = {
+			isa = PBXGroup;
+			children = (
+				A567A16626481204004F6BBE /* Package.swift */,
+			);
+			path = BuildTools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -153,6 +169,7 @@
 			buildConfigurationList = A5105DA025F2923A00B582B8 /* Build configuration list for PBXNativeTarget "Layout" */;
 			buildPhases = (
 				A5105D8725F2923A00B582B8 /* Headers */,
+				A567A16726481263004F6BBE /* Run SwiftFormat */,
 				A5105D8825F2923A00B582B8 /* Sources */,
 				A5105D8925F2923A00B582B8 /* Frameworks */,
 				A5105D8A25F2923A00B582B8 /* Resources */,
@@ -238,6 +255,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A567A16726481263004F6BBE /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=macosx\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5105D8825F2923A00B582B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A567A16226480FD7004F6BBE /* LayoutPinnableTests.swift in Sources */,
 				A5105D9B25F2923A00B582B8 /* LayoutConstraintTests.swift in Sources */,
+				A567A16426481047004F6BBE /* NSLayoutConstraint+Comparable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

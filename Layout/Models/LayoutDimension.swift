@@ -9,12 +9,11 @@
 import UIKit
 
 public class LayoutDimension: LayoutAnchor {
-    
     override init(view: NSLayoutAnchorable, type: Type) {
         guard type.isDimension else {
             fatalError("Need to init with dimension type")
         }
-        
+
         super.init(view: view, type: type)
     }
 
@@ -28,7 +27,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func lessOrEqual(
         constant: CGFloat = 0,
         priority: UILayoutPriority = .standart
@@ -39,7 +38,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func greaterOrEqual(
         constant: CGFloat = 0,
         priority: UILayoutPriority = .standart
@@ -50,7 +49,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func equal(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,
@@ -65,7 +64,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func lessOrEqual(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,
@@ -80,7 +79,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func greaterOrEqual(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,
@@ -95,7 +94,7 @@ public class LayoutDimension: LayoutAnchor {
             priority: priority
         )
     }
-    
+
     private func constraint(
         to dimension: LayoutDimension,
         type: LayoutConstraint.`Type`,

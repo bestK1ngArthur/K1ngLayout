@@ -11,7 +11,7 @@ public struct LayoutConstraint {
     public let from: LayoutAnchor
     public let to: LayoutAnchor
     public let type: Type
-    
+
     public let multiplifier: CGFloat
     public var constant: CGFloat {
         didSet {
@@ -19,11 +19,11 @@ public struct LayoutConstraint {
             nsConstraint?.constant = constant
         }
     }
-    
+
     public let priority: UILayoutPriority
-    
+
     internal var nsConstraint: NSLayoutConstraint?
-    
+
     init(
         from: LayoutAnchor,
         to: LayoutAnchor,
@@ -38,18 +38,18 @@ public struct LayoutConstraint {
         self.multiplifier = multiplifier
         self.constant = constant
         self.priority = priority
-        
+
         generateNSConstraint()
     }
-    
+
     public static func activate(_ constraints: [LayoutConstraint]) {
         NSLayoutConstraint.activate(nsConstraints(from: constraints))
     }
-    
+
     internal static func nsConstraints(from constraints: [Self]) -> [NSLayoutConstraint] {
         return constraints.compactMap(\.nsConstraint)
     }
-    
+
     private mutating func generateNSConstraint() {
         if let fromDimension = from as? LayoutDimension,
            let toDimension = to as? LayoutDimension {
@@ -57,7 +57,7 @@ public struct LayoutConstraint {
                   let toDimensionAnchor = nsDimension(from: toDimension) else {
                 fatalError("Can't find dimension anchor")
             }
-            
+
             nsConstraint = nsDimensionConstraint(
                 from: fromDimensionAnchor,
                 to: toDimensionAnchor,
@@ -65,13 +65,13 @@ public struct LayoutConstraint {
                 multiplifier: multiplifier,
                 constant: constant
             )
-            
+
         } else {
             guard let fromAnchor = nsAnchor(from: from),
                   let toAnchor = nsAnchor(from: to) else {
                 fatalError("Can't find anchor")
             }
-            
+
             nsConstraint = nsAnchorConstraint(
                 from: fromAnchor,
                 to: toAnchor,
@@ -79,10 +79,10 @@ public struct LayoutConstraint {
                 constant: constant
             )
         }
-        
+
         nsConstraint?.priority = priority
     }
-    
+
     private func nsAnchorConstraint(
         from: NSLayoutAnchor<AnyObject>,
         to: NSLayoutAnchor<AnyObject>,
@@ -107,7 +107,7 @@ public struct LayoutConstraint {
             )
         }
     }
-    
+
     private func nsDimensionConstraint(
         from: NSLayoutDimension,
         to: NSLayoutDimension,
@@ -131,7 +131,7 @@ public struct LayoutConstraint {
                 )
             }
         }
-        
+
         switch type {
         case .equal:
             return from.constraint(
@@ -153,13 +153,13 @@ public struct LayoutConstraint {
             )
         }
     }
-    
+
     private func nsAnchor(from anchor: LayoutAnchor) -> NSLayoutAnchor<AnyObject>? {
         guard let anchors = anchor.view else {
             assertionFailure("View can't be nil")
             return nil
         }
-        
+
         let layoutAnchor: NSObject? = {
             switch anchor.type {
             case .top: return anchors.topAnchor
@@ -173,16 +173,16 @@ public struct LayoutConstraint {
             default: return nil
             }
         }()
-        
+
         return layoutAnchor as? NSLayoutAnchor<AnyObject>
     }
-    
+
     private func nsDimension(from dimension: LayoutDimension) -> NSLayoutDimension? {
         guard let dimensions = dimension.view else {
             assertionFailure("View can't be nil")
             return nil
         }
-        
+
         let dimensionAnchor: NSLayoutDimension? = {
             switch dimension.type {
             case .height: return dimensions.heightAnchor
@@ -190,33 +190,31 @@ public struct LayoutConstraint {
             default: return nil
             }
         }()
-        
+
         return dimensionAnchor
     }
 }
 
-extension LayoutConstraint {
-    public enum `Type` {
+public extension LayoutConstraint {
+    enum `Type` {
         case equal
         case lessOrEqual
         case greaterOrEqual
     }
 }
 
-extension UILayoutPriority {
-    public static var standart: UILayoutPriority { .required - 1 }
+public extension UILayoutPriority {
+    static var standart: UILayoutPriority { .required - 1 }
 }
 
-extension UIView {
-    
-    public func activate(_ constraints: [LayoutConstraint]) {
+public extension UIView {
+    func activate(_ constraints: [LayoutConstraint]) {
         LayoutConstraint.activate(constraints)
     }
 }
 
-extension UILayoutGuide {
-    
-    public func activate(_ constraints: [LayoutConstraint]) {
+public extension UILayoutGuide {
+    func activate(_ constraints: [LayoutConstraint]) {
         LayoutConstraint.activate(constraints)
     }
 }

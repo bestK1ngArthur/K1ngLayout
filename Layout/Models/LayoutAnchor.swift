@@ -10,12 +10,12 @@ import UIKit
 public class LayoutAnchor {
     public weak var view: NSLayoutAnchorable?
     public let type: Type
-    
+
     public init(view: NSLayoutAnchorable, type: Type) {
         self.view = view
         self.type = type
     }
-    
+
     public func equal(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -28,7 +28,7 @@ public class LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func lessOrEqual(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -41,7 +41,7 @@ public class LayoutAnchor {
             priority: priority
         )
     }
-    
+
     public func greaterOrEqual(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -54,7 +54,7 @@ public class LayoutAnchor {
             priority: priority
         )
     }
-    
+
     private func constraint(
         to anchor: LayoutAnchor,
         type: LayoutConstraint.`Type`,
@@ -72,8 +72,8 @@ public class LayoutAnchor {
     }
 }
 
-extension LayoutAnchor {
-    public enum `Type` {
+public extension LayoutAnchor {
+    enum `Type` {
         case top
         case bottom
         case left
@@ -84,7 +84,7 @@ extension LayoutAnchor {
         case hCenter
         case height
         case width
-        
+
         var isDimension: Bool {
             switch self {
             case .height, .width: return true
