@@ -33,6 +33,8 @@ public protocol LayoutAnchorable: AnyObject {
     var hCenter: LayoutAnchor { get }
 }
 
+// MARK: -
+
 extension UIView: LayoutAnchorable {
     public var top: LayoutAnchor { .init(view: self, type: .top) }
     public var bottom: LayoutAnchor { .init(view: self, type: .bottom) }
@@ -46,6 +48,8 @@ extension UIView: LayoutAnchorable {
     public var vCenter: LayoutAnchor { .init(view: self, type: .vCenter) }
     public var hCenter: LayoutAnchor { .init(view: self, type: .hCenter) }
 }
+
+// MARK: -
 
 extension UILayoutGuide: LayoutAnchorable {
     public var top: LayoutAnchor { .init(view: self, type: .top) }

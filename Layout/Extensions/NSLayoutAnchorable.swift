@@ -25,5 +25,10 @@ public protocol NSLayoutAnchorable: AnyObject {
     var widthAnchor: NSLayoutDimension { get }
 }
 
+// MARK: -
+
 extension UILayoutGuide: NSLayoutAnchorable {}
+
+// MARK: -
+
 extension UIView: NSLayoutAnchorable {}

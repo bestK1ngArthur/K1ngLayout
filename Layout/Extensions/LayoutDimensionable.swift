@@ -15,10 +15,14 @@ public protocol LayoutDimensionable: AnyObject {
     var width: LayoutDimension { get }
 }
 
+// MARK: -
+
 extension UIView: LayoutDimensionable {
     public var height: LayoutDimension { .init(view: self, type: .height) }
     public var width: LayoutDimension { .init(view: self, type: .width) }
 }
+
+// MARK: -
 
 extension UILayoutGuide: LayoutDimensionable {
     public var height: LayoutDimension { .init(view: self, type: .height) }

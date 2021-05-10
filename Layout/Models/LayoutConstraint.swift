@@ -209,6 +209,8 @@ public struct LayoutConstraint {
     }
 }
 
+// MARK: Nested types
+
 public extension LayoutConstraint {
     /// Type of layout constraint
     enum `Type` {
@@ -223,10 +225,14 @@ public extension LayoutConstraint {
     }
 }
 
+// MARK: -
+
 public extension UILayoutPriority {
     /// Standart value of layout priority. Equals `.required - 1`.
     static var standart: UILayoutPriority { .required - 1 }
 }
+
+// MARK: -
 
 public extension UIView {
     /**
@@ -238,6 +244,8 @@ public extension UIView {
         LayoutConstraint.activate(constraints)
     }
 }
+
+// MARK: -
 
 public extension UILayoutGuide {
     /**
