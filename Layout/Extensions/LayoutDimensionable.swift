@@ -8,7 +8,10 @@
 import UIKit
 
 public protocol LayoutDimensionable: AnyObject {
+    /// [ Height layout dimension
     var height: LayoutDimension { get }
+
+    /// ⎵ Width layout dimension
     var width: LayoutDimension { get }
 }
 

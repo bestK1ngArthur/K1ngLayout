@@ -17,6 +17,14 @@ public class LayoutDimension: LayoutAnchor {
         super.init(view: view, type: type)
     }
 
+    /**
+     Creates constraint with **equal** type.
+
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func equal(
         constant: CGFloat = 0,
         priority: UILayoutPriority = .standart
@@ -28,6 +36,14 @@ public class LayoutDimension: LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **lessOrEqual** type.
+
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func lessOrEqual(
         constant: CGFloat = 0,
         priority: UILayoutPriority = .standart
@@ -39,6 +55,14 @@ public class LayoutDimension: LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **greaterOrEqual** type.
+
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func greaterOrEqual(
         constant: CGFloat = 0,
         priority: UILayoutPriority = .standart
@@ -50,6 +74,16 @@ public class LayoutDimension: LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **equal** type.
+
+     - Parameter dimension: The target dimension.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter multiplifier: The multiplifier value. Default is `1`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func equal(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,
@@ -65,6 +99,16 @@ public class LayoutDimension: LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **lessOrEqual** type.
+
+     - Parameter dimension: The target dimension.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter multiplifier: The multiplifier value. Default is `1`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func lessOrEqual(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,
@@ -80,6 +124,16 @@ public class LayoutDimension: LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **greaterOrEqual** type.
+
+     - Parameter dimension: The target dimension.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter multiplifier: The multiplifier value. Default is `1`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func greaterOrEqual(
         to dimension: LayoutDimension,
         constant: CGFloat = 0,

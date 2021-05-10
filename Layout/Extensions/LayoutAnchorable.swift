@@ -8,16 +8,28 @@
 import UIKit
 
 public protocol LayoutAnchorable: AnyObject {
+    /// ↑ Top layout anchor
     var top: LayoutAnchor { get }
+
+    /// ↓ Bottom layout anchor
     var bottom: LayoutAnchor { get }
 
+    /// ← Left layout anchor
     var left: LayoutAnchor { get }
+
+    /// → Right layout anchor
     var right: LayoutAnchor { get }
 
+    /// ← Leading layout anchor
     var leading: LayoutAnchor { get }
+
+    /// → Trailing layout anchor
     var trailing: LayoutAnchor { get }
 
+    /// ↕ Vertical center layout anchor
     var vCenter: LayoutAnchor { get }
+
+    /// ↔ Horizontal center layout anchor
     var hCenter: LayoutAnchor { get }
 }
 

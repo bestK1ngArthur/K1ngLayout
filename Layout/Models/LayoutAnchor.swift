@@ -8,7 +8,10 @@
 import UIKit
 
 public class LayoutAnchor {
+    /// Target view
     public weak var view: NSLayoutAnchorable?
+
+    /// A type of anchor
     public let type: Type
 
     public init(view: NSLayoutAnchorable, type: Type) {
@@ -16,6 +19,15 @@ public class LayoutAnchor {
         self.type = type
     }
 
+    /**
+     Creates constraint with **equal** type.
+
+     - Parameter anchor: The target anchor.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func equal(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -29,6 +41,15 @@ public class LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **lessOrEqual** type.
+
+     - Parameter anchor: The target anchor.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func lessOrEqual(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -42,6 +63,15 @@ public class LayoutAnchor {
         )
     }
 
+    /**
+     Creates constraint with **greaterOrEqual** type.
+
+     - Parameter anchor: The target anchor.
+     - Parameter constant: The constant value. Default is `0`.
+     - Parameter priority: The priority of constraint.  Default is `.standart`.
+
+     - Returns: A layout constraint.
+     */
     public func greaterOrEqual(
         to anchor: LayoutAnchor,
         constant: CGFloat = 0,
@@ -72,19 +102,42 @@ public class LayoutAnchor {
     }
 }
 
+// MARK: Nested types
+
 public extension LayoutAnchor {
+    /// Type of layout anchor
     enum `Type` {
+        /// ↑ Top
         case top
+
+        /// ↓ Bottom
         case bottom
+
+        /// ← Left
         case left
+
+        /// → Right
         case right
+
+        /// ← Leading
         case leading
+
+        /// → Trailing
         case trailing
+
+        /// ↕ Vertical center
         case vCenter
+
+        /// ↔ Horizontal center
         case hCenter
+
+        /// [ Height
         case height
+
+        /// ⎵ Width
         case width
 
+        /// Is anchor is dimension
         var isDimension: Bool {
             switch self {
             case .height, .width: return true

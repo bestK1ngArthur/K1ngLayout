@@ -8,11 +8,19 @@
 import UIKit
 
 public struct LayoutConstraint {
+    /// From layout anchor
     public let from: LayoutAnchor
+
+    /// To layout anchor
     public let to: LayoutAnchor
+
+    /// A type of constraint
     public let type: Type
 
+    /// A multiplifier value of constraint
     public let multiplifier: CGFloat
+
+    /// A constant value of constraint
     public var constant: CGFloat {
         didSet {
             guard constant != oldValue else { return }
@@ -20,6 +28,7 @@ public struct LayoutConstraint {
         }
     }
 
+    /// A priority of constraint
     public let priority: UILayoutPriority
 
     internal var nsConstraint: NSLayoutConstraint?
@@ -42,6 +51,11 @@ public struct LayoutConstraint {
         generateNSConstraint()
     }
 
+    /**
+     Translates layout constraints to `NSLayoutConstraint` and activates them with autolayout.
+
+     - Parameter view: The array of layout constraints.
+     */
     public static func activate(_ constraints: [LayoutConstraint]) {
         NSLayoutConstraint.activate(nsConstraints(from: constraints))
     }
@@ -196,24 +210,41 @@ public struct LayoutConstraint {
 }
 
 public extension LayoutConstraint {
+    /// Type of layout constraint
     enum `Type` {
+        /// == Equal
         case equal
+
+        /// <= Less than or equal
         case lessOrEqual
+
+        /// >= Greater than or equal
         case greaterOrEqual
     }
 }
 
 public extension UILayoutPriority {
+    /// Standart value of layout priority. Equals `.required - 1`.
     static var standart: UILayoutPriority { .required - 1 }
 }
 
 public extension UIView {
+    /**
+     Translates layout constraints to `NSLayoutConstraint` and activates them with autolayout.
+
+     - Parameter view: The array of layout constraints.
+     */
     func activate(_ constraints: [LayoutConstraint]) {
         LayoutConstraint.activate(constraints)
     }
 }
 
 public extension UILayoutGuide {
+    /**
+     Translates layout constraints to `NSLayoutConstraint` and activates them with autolayout.
+
+     - Parameter view: The array of layout constraints.
+     */
     func activate(_ constraints: [LayoutConstraint]) {
         LayoutConstraint.activate(constraints)
     }
