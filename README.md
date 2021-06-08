@@ -5,12 +5,21 @@
 
 ## Instalation
 
+### CocoaPods
+
 Add pod to Podfile
 
 ```
-pod 'Layout', :git => 'https://github.com/bestK1ngArthur/Layout'
+pod 'Layout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 ```
 
+### Swift Package Manager
+
+Add package to dependencies
+
+```
+.package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "1.0.0"),
+```
 
 ## Examples
 
