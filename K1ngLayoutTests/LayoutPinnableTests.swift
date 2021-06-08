@@ -1,11 +1,11 @@
 //
 //  LayoutPinnableTests.swift
-//  LayoutTests
+//  K1ngLayoutTests
 //
 //  Created by Artem Belkov on 09.05.2021.
 //
 
-@testable import Layout
+@testable import K1ngLayout
 import XCTest
 
 class LayoutPinnableTests: XCTestCase {

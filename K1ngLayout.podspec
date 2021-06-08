@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "Layout"
+  spec.name         = "K1ngLayout"
   spec.version      = "0.0.1"
   spec.summary      = "Simple autolayout wrapper"
 
@@ -8,15 +8,15 @@ Pod::Spec.new do |spec|
   Simple UIKit autolayout wrapper to improve code cleanliness and readability
                    DESC
 
-  spec.homepage     = "https://github.com/bestK1ngArthur/Layout"
+  spec.homepage     = "https://github.com/bestK1ngArthur/K1ngLayout"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Artem Belkov" => "bestk1ngarthur@aol.com" }
 
   spec.platform     = :ios, "13.0"
-  spec.source       = { :git => "https://github.com/bestK1ngArthur/Layout.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/bestK1ngArthur/K1ngLayout.git", :tag => "#{spec.version}" }
 
-  spec.source_files  = "Layout", "Layout/**/*.{h,swift}"
-  spec.exclude_files = "Layout/Exclude"
+  spec.source_files  = "K1ngLayout", "K1ngLayout/**/*.{h,swift}"
+  spec.exclude_files = "K1ngLayout/Exclude"
   spec.swift_version = "5.0"
 
 end

@@ -1,9 +1,8 @@
 //
 //  LayoutDimension.swift
-//  EasyChem
+//  K1ngLayout
 //
 //  Created by Artem Belkov on 03.03.2021.
-//  Copyright © 2021 EasyChem. All rights reserved.
 //
 
 import UIKit

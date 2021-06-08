@@ -1,9 +1,8 @@
 //
-//  Layout.swift
-//  EasyChem
+//  NSLayoutAnchorable.swift
+//  K1ngLayout
 //
 //  Created by Artem Belkov on 18.02.2021.
-//  Copyright © 2021 EasyChem. All rights reserved.
 //
 
 import UIKit

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5105D9625F2923A00B582B8 /* Layout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5105D8C25F2923A00B582B8 /* Layout.framework */; };
+		A5105D9625F2923A00B582B8 /* K1ngLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5105D8C25F2923A00B582B8 /* K1ngLayout.framework */; };
 		A5105D9B25F2923A00B582B8 /* LayoutConstraintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105D9A25F2923A00B582B8 /* LayoutConstraintTests.swift */; };
-		A5105D9D25F2923A00B582B8 /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105D8F25F2923A00B582B8 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5105D9D25F2923A00B582B8 /* K1ngLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A5105D8F25F2923A00B582B8 /* K1ngLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5105DB025F293BF00B582B8 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DA825F293BF00B582B8 /* LayoutConstraint.swift */; };
 		A5105DB125F293BF00B582B8 /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DA925F293BF00B582B8 /* LayoutAnchor.swift */; };
 		A5105DB225F293BF00B582B8 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5105DAA25F293BF00B582B8 /* EdgeInsets.swift */; };
@@ -33,10 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A5105D8C25F2923A00B582B8 /* Layout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Layout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5105D8F25F2923A00B582B8 /* Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		A5105D8C25F2923A00B582B8 /* K1ngLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = K1ngLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5105D8F25F2923A00B582B8 /* K1ngLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = K1ngLayout.h; sourceTree = "<group>"; };
 		A5105D9025F2923A00B582B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5105D9525F2923A00B582B8 /* LayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5105D9525F2923A00B582B8 /* K1ngLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = K1ngLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5105D9A25F2923A00B582B8 /* LayoutConstraintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraintTests.swift; sourceTree = "<group>"; };
 		A5105D9C25F2923A00B582B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5105DA825F293BF00B582B8 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5105D9625F2923A00B582B8 /* Layout.framework in Frameworks */,
+				A5105D9625F2923A00B582B8 /* K1ngLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				A567A165264811D6004F6BBE /* BuildTools */,
-				A5105D8E25F2923A00B582B8 /* Layout */,
-				A5105D9925F2923A00B582B8 /* LayoutTests */,
+				A5105D8E25F2923A00B582B8 /* K1ngLayout */,
+				A5105D9925F2923A00B582B8 /* K1ngLayoutTests */,
 				A5105D8D25F2923A00B582B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,25 +84,25 @@
 		A5105D8D25F2923A00B582B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A5105D8C25F2923A00B582B8 /* Layout.framework */,
-				A5105D9525F2923A00B582B8 /* LayoutTests.xctest */,
+				A5105D8C25F2923A00B582B8 /* K1ngLayout.framework */,
+				A5105D9525F2923A00B582B8 /* K1ngLayoutTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A5105D8E25F2923A00B582B8 /* Layout */ = {
+		A5105D8E25F2923A00B582B8 /* K1ngLayout */ = {
 			isa = PBXGroup;
 			children = (
-				A5105D8F25F2923A00B582B8 /* Layout.h */,
+				A5105D8F25F2923A00B582B8 /* K1ngLayout.h */,
 				A5105D9025F2923A00B582B8 /* Info.plist */,
 				A5105DF025F29A3B00B582B8 /* Extensions */,
 				A5105DF825F29ACD00B582B8 /* Models */,
 				A5105DFB25F29AE300B582B8 /* Utilities */,
 			);
-			path = Layout;
+			path = K1ngLayout;
 			sourceTree = "<group>";
 		};
-		A5105D9925F2923A00B582B8 /* LayoutTests */ = {
+		A5105D9925F2923A00B582B8 /* K1ngLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
 				A5105D9A25F2923A00B582B8 /* LayoutConstraintTests.swift */,
@@ -110,7 +110,7 @@
 				A567A16326481047004F6BBE /* NSLayoutConstraint+Comparable.swift */,
 				A5105D9C25F2923A00B582B8 /* Info.plist */,
 			);
-			path = LayoutTests;
+			path = K1ngLayoutTests;
 			sourceTree = "<group>";
 		};
 		A5105DF025F29A3B00B582B8 /* Extensions */ = {
@@ -157,16 +157,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5105D9D25F2923A00B582B8 /* Layout.h in Headers */,
+				A5105D9D25F2923A00B582B8 /* K1ngLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A5105D8B25F2923A00B582B8 /* Layout */ = {
+		A5105D8B25F2923A00B582B8 /* K1ngLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5105DA025F2923A00B582B8 /* Build configuration list for PBXNativeTarget "Layout" */;
+			buildConfigurationList = A5105DA025F2923A00B582B8 /* Build configuration list for PBXNativeTarget "K1ngLayout" */;
 			buildPhases = (
 				A5105D8725F2923A00B582B8 /* Headers */,
 				A567A16726481263004F6BBE /* Run SwiftFormat */,
@@ -178,14 +178,14 @@
 			);
 			dependencies = (
 			);
-			name = Layout;
+			name = K1ngLayout;
 			productName = Layout;
-			productReference = A5105D8C25F2923A00B582B8 /* Layout.framework */;
+			productReference = A5105D8C25F2923A00B582B8 /* K1ngLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A5105D9425F2923A00B582B8 /* LayoutTests */ = {
+		A5105D9425F2923A00B582B8 /* K1ngLayoutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A5105DA325F2923A00B582B8 /* Build configuration list for PBXNativeTarget "LayoutTests" */;
+			buildConfigurationList = A5105DA325F2923A00B582B8 /* Build configuration list for PBXNativeTarget "K1ngLayoutTests" */;
 			buildPhases = (
 				A5105D9125F2923A00B582B8 /* Sources */,
 				A5105D9225F2923A00B582B8 /* Frameworks */,
@@ -196,9 +196,9 @@
 			dependencies = (
 				A5105D9825F2923A00B582B8 /* PBXTargetDependency */,
 			);
-			name = LayoutTests;
+			name = K1ngLayoutTests;
 			productName = LayoutTests;
-			productReference = A5105D9525F2923A00B582B8 /* LayoutTests.xctest */;
+			productReference = A5105D9525F2923A00B582B8 /* K1ngLayoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A5105D8625F2923A00B582B8 /* Build configuration list for PBXProject "Layout" */;
+			buildConfigurationList = A5105D8625F2923A00B582B8 /* Build configuration list for PBXProject "K1ngLayout" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -232,8 +232,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A5105D8B25F2923A00B582B8 /* Layout */,
-				A5105D9425F2923A00B582B8 /* LayoutTests */,
+				A5105D8B25F2923A00B582B8 /* K1ngLayout */,
+				A5105D9425F2923A00B582B8 /* K1ngLayoutTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +307,7 @@
 /* Begin PBXTargetDependency section */
 		A5105D9825F2923A00B582B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A5105D8B25F2923A00B582B8 /* Layout */;
+			target = A5105D8B25F2923A00B582B8 /* K1ngLayout */;
 			targetProxy = A5105D9725F2923A00B582B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -445,7 +445,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Layout/Info.plist;
+				INFOPLIST_FILE = K1ngLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,7 +454,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.Layout;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.K1ngLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -473,7 +473,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Layout/Info.plist;
+				INFOPLIST_FILE = K1ngLayout/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -482,7 +482,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.Layout;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.bestK1ng.K1ngLayout;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -496,7 +496,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = LayoutTests/Info.plist;
+				INFOPLIST_FILE = K1ngLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,7 +515,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CT884K7983;
-				INFOPLIST_FILE = LayoutTests/Info.plist;
+				INFOPLIST_FILE = K1ngLayoutTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,7 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A5105D8625F2923A00B582B8 /* Build configuration list for PBXProject "Layout" */ = {
+		A5105D8625F2923A00B582B8 /* Build configuration list for PBXProject "K1ngLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5105D9E25F2923A00B582B8 /* Debug */,
@@ -540,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5105DA025F2923A00B582B8 /* Build configuration list for PBXNativeTarget "Layout" */ = {
+		A5105DA025F2923A00B582B8 /* Build configuration list for PBXNativeTarget "K1ngLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5105DA125F2923A00B582B8 /* Debug */,
@@ -549,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A5105DA325F2923A00B582B8 /* Build configuration list for PBXNativeTarget "LayoutTests" */ = {
+		A5105DA325F2923A00B582B8 /* Build configuration list for PBXNativeTarget "K1ngLayoutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A5105DA425F2923A00B582B8 /* Debug */,

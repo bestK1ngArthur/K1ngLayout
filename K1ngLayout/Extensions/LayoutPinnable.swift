@@ -1,6 +1,6 @@
 //
 //  LayoutPinnable.swift
-//  Layout
+//  K1ngLayout
 //
 //  Created by Artem Belkov on 03.03.2021.
 //

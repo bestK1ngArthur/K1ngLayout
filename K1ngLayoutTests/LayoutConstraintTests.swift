@@ -1,11 +1,11 @@
 //
 //  LayoutConstraintTests.swift
-//  LayoutTests
+//  K1ngLayoutTests
 //
 //  Created by Artem Belkov on 05.03.2021.
 //
 
-@testable import Layout
+@testable import K1ngLayout
 import XCTest
 
 class LayoutConstraintTests: XCTestCase {
