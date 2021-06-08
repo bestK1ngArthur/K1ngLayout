@@ -2,14 +2,14 @@
 .DS_Store
 
 ## Build generated
+.build/
 build/
 DerivedData/
 
-## Xcode
-*.xcodeproj/xcuserdata/
-*.xcodeproj/xcshareddata/
-**/xcshareddata/WorkspaceSettings.xcsettings
-
 ## Swift Package Manager
+/*.xcodeproj
+/*.xcworkspace
 BuildTools/.build
 BuildTools/.swiftpm
+Packages
+.swiftpm/
