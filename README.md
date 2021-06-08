@@ -18,7 +18,7 @@ pod 'Layout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 Add package to dependencies
 
 ```
-.package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "1.0.0"),
+.package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "0.0.1"),
 ```
 
 ## Examples
