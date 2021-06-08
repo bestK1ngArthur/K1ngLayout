@@ -9,7 +9,7 @@
 
 Add pod to Podfile
 
-```
+```Ruby
 pod 'Layout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 ```
 
@@ -17,7 +17,7 @@ pod 'Layout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 
 Add package to dependencies
 
-```
+```Swift
 .package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "0.0.1"),
 ```
 
