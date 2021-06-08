@@ -10,7 +10,7 @@
 Add pod to Podfile
 
 ```Ruby
-pod 'Layout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
+pod 'K1ngLayout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 ```
 
 ### Swift Package Manager
@@ -25,7 +25,7 @@ Add package to dependencies
 
 ```Swift
 
-// With autolayout
+// With Auto Layout
 
 let constraints = [
     view.topAnchor.constraint(equalTo: superview.topAnchor, constant: 8),
@@ -34,7 +34,7 @@ let constraints = [
 
 NSLayoutConstraint.activate(constraints)
 
-// With Layout
+// With K1ngLayout
 
 let constraints = [
     view.top.equal(to: superview.top, constant: 8),
@@ -47,7 +47,7 @@ view.activate(constraints)
 
 ```Swift
 
-// With autolayout
+// With Auto Layout
 
 let constraints = [
     view.topAnchor.constraint(equalTo: superview.topAnchor),
@@ -58,7 +58,7 @@ let constraints = [
 
 NSLayoutConstraint.activate(constraints)
 
-// With Layout
+// With K1ngLayout
 
 view.activate(
     view.pinEqualEdges(to: superview)
@@ -68,7 +68,7 @@ view.activate(
 
 ```Swift
 
-// With autolayout
+// With Auto Layout
 
 let constraints = [
     view.leftAnchor.constraint(equalTo: superview.leftAnchor, constant: 16),
@@ -77,7 +77,7 @@ let constraints = [
 
 NSLayoutConstraint.activate(constraints)
 
-// With Layout
+// With K1ngLayout
 
 view.activate(
     view.pinEqualEdges(to: superview, insets: .horizontal(16))
