@@ -15,7 +15,8 @@ let package = Package(
     targets: [
         .target(
             name: "K1ngLayout",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "K1ngLayoutTests",
             dependencies: ["K1ngLayout"]

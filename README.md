@@ -18,7 +18,7 @@ pod 'K1ngLayout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 Add package to dependencies
 
 ```Swift
-.package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "0.0.1"),
+.package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "0.0.2"),
 ```
 
 ## Examples
