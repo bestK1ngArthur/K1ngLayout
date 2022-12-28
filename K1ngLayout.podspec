@@ -17,6 +17,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files  = "Sources", "Sources/K1ngLayout/**/*.{h,swift}"
   spec.exclude_files = "Sources/K1ngLayout/Exclude"
-  spec.swift_version = "5.0"
+  spec.swift_version = "5.7"
 
 end
