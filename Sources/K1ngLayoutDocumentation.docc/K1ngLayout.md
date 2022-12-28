@@ -1,4 +1,4 @@
-# ````
+# K1ngLayout
 
 📐 Simple autolayout wrapper
 
@@ -8,7 +8,7 @@
 
 Add pod to Podfile
 
-```Ruby
+```ruby
 pod 'K1ngLayout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 ```
 
@@ -16,13 +16,13 @@ pod 'K1ngLayout', :git => 'https://github.com/bestK1ngArthur/K1ngLayout'
 
 Add package to dependencies
 
-```Swift
+```swift
 .package(url: "https://github.com/bestK1ngArthur/K1ngLayout", from: "0.0.2"),
 ```
 
 ## Examples
 
-```Swift
+```swift
 
 // With Auto Layout
 
@@ -44,7 +44,7 @@ view.activate(constraints)
 
 ```
 
-```Swift
+```swift
 
 // With Auto Layout
 
@@ -65,7 +65,7 @@ view.activate(
 
 ```
 
-```Swift
+```swift
 
 // With Auto Layout
 
