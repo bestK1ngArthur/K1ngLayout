@@ -23,6 +23,8 @@ Add package to dependencies
 
 ## Examples
 
+Documentation is available by [link](https://bestk1ngarthur.github.io/K1ngLayout/documentation/k1nglayout).
+
 ```swift
 
 // With Auto Layout
